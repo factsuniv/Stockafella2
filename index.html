@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<!-- saved from url=(0097)https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stockafella - Modern Stock Market Education</title>
+    <link href="./Stockafella - Modern Stock Market Education_files/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./Stockafella - Modern Stock Market Education_files/all.min.css">
+    <link href="./Stockafella - Modern Stock Market Education_files/css2" rel="stylesheet">
+    <style>
+        :root {
+            --space-blue: #0a192f;
+            --space-blue-light: #172a45;
+            --space-blue-lighter: #303c55;
+            --accent-blue: #64ffda;
+            --text-primary: #e6f1ff;
+            --text-secondary: #8892b0;
+            --stock-green: #00c805;
+            --stock-red: #ff5000;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--space-blue);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .bg-space-blue {
+            background-color: var(--space-blue);
+        }
+        
+        .bg-space-blue-light {
+            background-color: var(--space-blue-light);
+        }
+        
+        .bg-space-blue-lighter {
+            background-color: var(--space-blue-lighter);
+        }
+        
+        .text-accent {
+            color: var(--accent-blue);
+        }
+        
+        .border-accent {
+            border-color: var(--accent-blue);
+        }
+        
+        .stock-up {
+            color: var(--stock-green);
+        }
+        
+        .stock-down {
+            color: var(--stock-red);
+        }
+        
+        .category-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            background: linear-gradient(135deg, var(--space-blue-light) 0%, var(--space-blue) 100%);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .lesson-card {
+            background: linear-gradient(135deg, var(--space-blue-light) 0%, var(--space-blue-lighter) 100%);
+            transition: transform 0.2s;
+        }
+        
+        .lesson-card:hover {
+            transform: translateY(-3px);
+        }
+        
+        .premium-overlay {
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(4px);
+        }
+        
+        .custom-audio-player {
+            background: var(--space-blue-lighter);
+            border-radius: 10px;
+        }
+        
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            height: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .progress-bar {
+            background: var(--accent-blue);
+            height: 5px;
+            border-radius: 5px;
+            width: 0%;
+        }
+        
+        .volume-slider {
+            -webkit-appearance: none;
+            height: 5px;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            outline: none;
+        }
+        
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            cursor: pointer;
+        }
+        
+        .infographic-container {
+            position: relative;
+            background: linear-gradient(135deg, var(--space-blue-light) 0%, var(--space-blue-lighter) 100%);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .hotspot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: rgba(100, 255, 218, 0.3);
+            border: 2px solid var(--accent-blue);
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        
+        .hotspot:hover {
+            background-color: rgba(100, 255, 218, 0.6);
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: var(--space-blue-lighter);
+            color: var(--text-primary);
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 200px;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            pointer-events: none;
+            transform: translateY(10px);
+            z-index: 20;
+        }
+        
+        .nav-link {
+            position: relative;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--accent-blue);
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .btn-primary {
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--accent-blue);
+            color: var(--space-blue);
+            transition: opacity 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            opacity: 0.9;
+        }
+        
+        .market-ticker {
+            background-color: var(--space-blue-lighter);
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 30s linear infinite;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(100, 255, 218, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(100, 255, 218, 0); }
+        }
+        
+        .candlestick {
+            width: 8px;
+            border-radius: 2px;
+            position: relative;
+        }
+        
+        .candlestick::before, .candlestick::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: currentColor;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .candlestick::before {
+            bottom: 100%;
+        }
+        
+        .candlestick::after {
+            top: 100%;
+        }
+        
+        .stock-chart {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        
+        .chart-line {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        
+        .modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .modal-content {
+            background: var(--space-blue-light);
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            padding: 20px;
+            transform: translateY(20px);
+            transition: transform 0.3s;
+        }
+        
+        .modal.active .modal-content {
+            transform: translateY(0);
+        }
+        
+        /* Mobile responsive styles */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 70%;
+                height: calc(100vh - 70px);
+                background: var(--space-blue-light);
+                flex-direction: column;
+                transition: right 0.3s;
+                z-index: 20;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .category-section {
+                overflow-x: scroll;
+                padding-bottom: 10px;
+            }
+            
+            .category-section::-webkit-scrollbar {
+                height: 5px;
+            }
+            
+            .category-section::-webkit-scrollbar-track {
+                background: var(--space-blue);
+            }
+            
+            .category-section::-webkit-scrollbar-thumb {
+                background: var(--space-blue-lighter);
+                border-radius: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="flex justify-between items-center py-4 px-6 md:px-10 bg-space-blue shadow-lg z-30 sticky top-0">
+        <div class="flex items-center">
+            <div class="text-xl md:text-2xl logo-text text-accent">
+                $TOCKAFELLA
+            </div>
+        </div>
+        
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#categories" class="nav-link">Learn</a>
+            <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#pricing" class="nav-link">Pricing</a>
+            <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#about" class="nav-link">About</a>
+            <button id="login-btn" class="btn-primary py-2 px-4 rounded text-sm">Log In</button>
+            <button id="signup-btn" class="btn-secondary py-2 px-4 rounded text-sm">Sign Up</button>
+        </div>
+        
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-white">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </nav>
+    
+    <div id="mobile-menu" class="nav-menu md:hidden px-6 py-4 flex space-y-4">
+        <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#categories" class="nav-link">Learn</a>
+        <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#pricing" class="nav-link">Pricing</a>
+        <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#about" class="nav-link">About</a>
+        <button id="mobile-login-btn" class="btn-primary py-2 px-4 rounded text-sm w-full">Log In</button>
+        <button id="mobile-signup-btn" class="btn-secondary py-2 px-4 rounded text-sm w-full">Sign Up</button>
+    </div>
+    
+    <!-- Market Ticker -->
+    <div class="market-ticker py-2 px-4">
+        <div class="ticker-content">
+            <span class="mr-8">S&amp;P 500: <span class="stock-up">4,587.64 ↑ 1.23%</span></span>
+            <span class="mr-8">NASDAQ: <span class="stock-up">14,346.02 ↑ 1.47%</span></span>
+            <span class="mr-8">DOW: <span class="stock-down">37,583.22 ↓ 0.34%</span></span>
+            <span class="mr-8">AAPL: <span class="stock-up">182.63 ↑ 1.02%</span></span>
+            <span class="mr-8">MSFT: <span class="stock-up">403.78 ↑ 0.87%</span></span>
+            <span class="mr-8">AMZN: <span class="stock-down">178.75 ↓ 0.55%</span></span>
+            <span class="mr-8">TSLA: <span class="stock-up">177.95 ↑ 2.14%</span></span>
+            <span class="mr-8">GOOG: <span class="stock-up">147.82 ↑ 0.75%</span></span>
+            <span class="mr-8">META: <span class="stock-up">468.25 ↑ 1.63%</span></span>
+            <span class="mr-8">BTC: <span class="stock-up">61,245.78 ↑ 3.25%</span></span>
+            <span class="mr-8">ETH: <span class="stock-up">3,247.52 ↑ 2.89%</span></span>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section class="relative py-16 md:py-24 px-6 md:px-10 overflow-hidden">
+        <div class="absolute top-0 right-0 -z-10 opacity-20">
+            <svg width="600" height="600" viewBox="0 0 100 100">
+                <path d="M50,0 L100,50 L50,100 L0,50 Z" fill="none" stroke="var(--accent-blue)" stroke-width="0.5"></path>
+                <circle cx="50" cy="50" r="40" fill="none" stroke="var(--accent-blue)" stroke-width="0.5"></circle>
+                <line x1="0" y1="50" x2="100" y2="50" stroke="var(--accent-blue)" stroke-width="0.5"></line>
+                <line x1="50" y1="0" x2="50" y2="100" stroke="var(--accent-blue)" stroke-width="0.5"></line>
+            </svg>
+        </div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Master The <span class="text-accent">Stock Market</span> With Confidence</h1>
+                    <p class="text-text-secondary text-lg mb-6">Learn to trade and invest like the pros with bite-sized audio lessons and interactive visuals designed for today's digital investor.</p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <button class="btn-secondary py-3 px-6 rounded-md text-base font-medium">Start Free Lessons</button>
+                        <button class="btn-primary py-3 px-6 rounded-md text-base font-medium">View Pricing</button>
+                    </div>
+                </div>
+                
+                <div class="order-first md:order-last flex justify-center">
+                    <div class="relative w-64 h-64 md:w-96 md:h-96">
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border-2 border-accent rounded-full opacity-20 animate-pulse"></div>
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-1/2 h-1/2 border-2 border-accent rounded-full opacity-40 animate-pulse" style="animation-delay: 1s;"></div>
+                        
+                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                            <div class="text-5xl md:text-7xl font-bold text-accent">$</div>
+                        </div>
+                        
+                        <!-- Stock Chart Animation -->
+                        <div class="absolute bottom-1/4 left-1/4 w-1/2 h-1/5">
+                            <div class="stock-chart">
+                                <svg class="chart-line" viewBox="0 0 100 40" preserveAspectRatio="none">
+                                    <path d="M0,35 L10,30 L20,32 L30,25 L40,28 L50,20 L60,15 L70,18 L80,10 L90,5 L100,8" stroke="var(--stock-green)" stroke-width="2" fill="none"></path>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="py-16 px-6 md:px-10 bg-space-blue-light">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Why Learn With <span class="text-accent">Stockafella</span>?</h2>
+            <p class="text-text-secondary text-center mb-12 max-w-2xl mx-auto">Our platform combines expert knowledge with cutting-edge technology to deliver the most effective stock market education available.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fas fa-headphones"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Audio Lessons</h3>
+                    <p class="text-text-secondary">Listen and learn anywhere with professional audio content that breaks down complex topics into digestible segments.</p>
+                </div>
+                
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Interactive Infographics</h3>
+                    <p class="text-text-secondary">Visualize key concepts with interactive graphics that respond to your engagement, making complex ideas simple.</p>
+                </div>
+                
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg">
+                    <div class="text-accent text-3xl mb-4">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Structured Learning Path</h3>
+                    <p class="text-text-secondary">Follow a clear progression from basics to advanced strategies, building your knowledge systematically.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section id="categories" class="py-16 px-6 md:px-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Educational Categories</h2>
+            <p class="text-text-secondary text-center mb-12 max-w-2xl mx-auto">Explore our comprehensive curriculum designed to take you from beginner to advanced investor.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Trading Basics Category -->
+                <div class="category-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-category="trading-basics">
+                    <div class="h-40 bg-space-blue-lighter relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-exchange-alt text-5xl text-accent opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-space-blue to-transparent h-1/2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Trading Basics</h3>
+                        <p class="text-text-secondary mb-4">Learn the fundamental concepts of stock trading and market mechanics.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accent">5 Lessons</span>
+                            <button class="text-accent">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Investing Fundamentals Category -->
+                <div class="category-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-category="investing-fundamentals">
+                    <div class="h-40 bg-space-blue-lighter relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-landmark text-5xl text-accent opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-space-blue to-transparent h-1/2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Investing Fundamentals</h3>
+                        <p class="text-text-secondary mb-4">Master the essentials of long-term investing and portfolio building.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accent">5 Lessons</span>
+                            <button class="text-accent">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Options Category -->
+                <div class="category-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-category="options">
+                    <div class="h-40 bg-space-blue-lighter relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-sitemap text-5xl text-accent opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-space-blue to-transparent h-1/2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Options</h3>
+                        <p class="text-text-secondary mb-4">Understand options contracts, strategies, and advanced trading techniques.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accent">4 Lessons</span>
+                            <button class="text-accent">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Technical Analysis Category -->
+                <div class="category-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-category="technical-analysis">
+                    <div class="h-40 bg-space-blue-lighter relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chart-bar text-5xl text-accent opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-space-blue to-transparent h-1/2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Technical Analysis</h3>
+                        <p class="text-text-secondary mb-4">Learn to read charts, identify patterns, and use indicators effectively.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accent">5 Lessons</span>
+                            <button class="text-accent">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Advanced Strategies Category -->
+                <div class="category-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-category="advanced-strategies">
+                    <div class="h-40 bg-space-blue-lighter relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-chess text-5xl text-accent opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-space-blue to-transparent h-1/2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Advanced Strategies</h3>
+                        <p class="text-text-secondary mb-4">Discover sophisticated trading and investing approaches used by professionals.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accent">4 Lessons</span>
+                            <button class="text-accent">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Market Psychology Category -->
+                <div class="category-card rounded-lg shadow-lg overflow-hidden cursor-pointer" data-category="market-psychology">
+                    <div class="h-40 bg-space-blue-lighter relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-brain text-5xl text-accent opacity-30"></i>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-space-blue to-transparent h-1/2"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Market Psychology</h3>
+                        <p class="text-text-secondary mb-4">Master the psychological aspects of trading and emotional discipline.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-accent">4 Lessons</span>
+                            <button class="text-accent">
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lesson Content Sections (Initially Hidden) -->
+    <section id="lesson-content" class="py-16 px-6 md:px-10 hidden">
+        <div class="max-w-6xl mx-auto">
+            <button id="back-to-categories" class="flex items-center text-accent mb-8">
+                <i class="fas fa-arrow-left mr-2"></i> Back to Categories
+            </button>
+            
+            <div id="category-title" class="mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Category Title</h2>
+                <p class="text-text-secondary" id="category-description">Category description goes here.</p>
+            </div>
+            
+            <div id="lessons-container" class="space-y-6">
+                <!-- Lessons will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-16 px-6 md:px-10 bg-space-blue-light">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">What Our Students Say</h2>
+            <p class="text-text-secondary text-center mb-12 max-w-2xl mx-auto">Join thousands of successful investors who have transformed their trading with Stockafella.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic mb-4">"The audio lessons were perfect for my commute. I learned more in a month with Stockafella than I did in a year of trying to figure things out on my own."</p>
+                    <div class="font-medium">Michael R.</div>
+                    <div class="text-sm text-text-secondary">Software Engineer</div>
+                </div>
+                
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic mb-4">"The interactive infographics made complex concepts so much easier to understand. My portfolio is up 32% since I started applying what I learned."</p>
+                    <div class="font-medium">Sarah T.</div>
+                    <div class="text-sm text-text-secondary">Marketing Director</div>
+                </div>
+                
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary italic mb-4">"I was intimidated by options trading before, but the step-by-step lessons broke it down perfectly. Now I'm confidently using options strategies in my portfolio."</p>
+                    <div class="font-medium">David L.</div>
+                    <div class="text-sm text-text-secondary">Healthcare Professional</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 px-6 md:px-10">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Membership Options</h2>
+            <p class="text-text-secondary text-center mb-12 max-w-2xl mx-auto">Choose the plan that fits your investment journey and unlock your full potential in the stock market.</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg border border-transparent hover:border-accent transition-colors duration-300">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold">Free</h3>
+                        <div class="text-3xl font-bold my-4">$0<span class="text-sm text-text-secondary font-normal">/month</span></div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Access to introductory lessons</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Basic interactive infographics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Preview of premium content</span>
+                        </li>
+                        <li class="flex items-start opacity-50">
+                            <i class="fas fa-times mt-1 mr-2"></i>
+                            <span>Advanced lessons and strategies</span>
+                        </li>
+                        <li class="flex items-start opacity-50">
+                            <i class="fas fa-times mt-1 mr-2"></i>
+                            <span>Community access</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn-primary py-2 px-4 rounded text-sm w-full">Get Started</button>
+                </div>
+                
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg border-2 border-accent relative transform md:scale-105">
+                    <div class="absolute top-0 right-0 bg-accent text-space-blue text-xs font-bold px-3 py-1 transform translate-x-2 -translate-y-2">
+                        POPULAR
+                    </div>
+                    
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold">Pro</h3>
+                        <div class="text-3xl font-bold my-4">$19<span class="text-sm text-text-secondary font-normal">/month</span></div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Full access to all lessons</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>All interactive infographics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Trading strategy guides</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Community access</span>
+                        </li>
+                        <li class="flex items-start opacity-50">
+                            <i class="fas fa-times mt-1 mr-2"></i>
+                            <span>1-on-1 coaching sessions</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn-secondary py-2 px-4 rounded text-sm w-full">Subscribe Now</button>
+                </div>
+                
+                <div class="bg-space-blue p-6 rounded-lg shadow-lg border border-transparent hover:border-accent transition-colors duration-300">
+                    <div class="text-center mb-4">
+                        <h3 class="text-xl font-bold">Elite</h3>
+                        <div class="text-3xl font-bold my-4">$49<span class="text-sm text-text-secondary font-normal">/month</span></div>
+                    </div>
+                    
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Everything in Pro plan</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Monthly 1-on-1 coaching session</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Advanced strategy workshops</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-accent mt-1 mr-2"></i>
+                            <span>Early access to new content</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="btn-primary py-2 px-4 rounded text-sm w-full">Go Elite</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-16 px-6 md:px-10 bg-space-blue-light">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">About <span class="text-accent">Stockafella</span></h2>
+                    <p class="text-text-secondary mb-4">Stockafella was founded by a team of seasoned investors, traders, and educators who saw a gap in the market for accessible, engaging stock market education.</p>
+                    <p class="text-text-secondary mb-4">Our mission is to democratize financial knowledge, helping everyday people build wealth through the stock market with confidence and clarity.</p>
+                    <p class="text-text-secondary mb-4">We believe that quality financial education shouldn't be confined to expensive courses or intimidating jargon. That's why we've created a platform that breaks down complex concepts into digestible, engaging content.</p>
+                    <p class="text-text-secondary">With Stockafella, you're not just learning about the stock market – you're joining a community dedicated to helping each other succeed.</p>
+                </div>
+                
+                <div class="order-first md:order-last">
+                    <div class="relative">
+                        <div class="bg-space-blue-lighter rounded-lg p-8 relative z-10">
+                            <div class="text-center mb-6">
+                                <div class="text-4xl text-accent mb-2">
+                                    <i class="fas fa-quote-left"></i>
+                                </div>
+                                <p class="text-lg italic">The stock market is a device for transferring money from the impatient to the patient.</p>
+                                <div class="mt-4 font-medium">— Warren Buffett</div>
+                            </div>
+                            
+                            <div class="border-t border-accent pt-6">
+                                <div class="text-accent mb-2 font-bold">Our Values</div>
+                                <ul class="space-y-2">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                        <span>Accessible education for all</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                        <span>Practical, actionable knowledge</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                        <span>Community support &amp; growth</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check-circle text-accent mt-1 mr-2"></i>
+                                        <span>Integrity in all we do</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="absolute -top-4 -right-4 -bottom-4 -left-4 border-2 border-accent rounded-lg z-0"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-12 px-6 md:px-10 bg-space-blue">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <div class="text-2xl logo-text text-accent mb-4">
+                        $TOCKAFELLA
+                    </div>
+                    <p class="text-text-secondary mb-4">Master the stock market with confidence through our expert-led audio lessons and interactive graphics.</p>
+                    <div class="flex space-x-4">
+                        <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">Home</a></li>
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#categories" class="text-text-secondary hover:text-accent">Categories</a></li>
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#pricing" class="text-text-secondary hover:text-accent">Pricing</a></li>
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#about" class="text-text-secondary hover:text-accent">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Legal</h3>
+                    <ul class="space-y-2">
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">Terms of Service</a></li>
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">Privacy Policy</a></li>
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">Disclaimer</a></li>
+                        <li><a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-text-secondary hover:text-accent">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-space-blue-lighter mt-8 pt-8 text-center text-text-secondary text-sm">
+                <p>© 2023 Stockafella. All rights reserved. The content provided on this website is for educational purposes only and is not financial advice.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Log In</h3>
+                <button class="close-modal text-text-secondary hover:text-accent">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 bg-space-blue-lighter border border-space-blue-lighter rounded-md focus:outline-none focus:border-accent" placeholder="your@email.com">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1">Password</label>
+                    <input type="password" class="w-full px-3 py-2 bg-space-blue-lighter border border-space-blue-lighter rounded-md focus:outline-none focus:border-accent" placeholder="********">
+                </div>
+                
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="remember" class="mr-2">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-accent">Forgot password?</a>
+                </div>
+                
+                <button type="button" class="btn-secondary py-2 px-4 rounded w-full">Log In</button>
+                
+                <div class="text-center text-sm">
+                    Don't have an account? <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-accent" id="show-signup">Sign up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Signup Modal -->
+    <div id="signup-modal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold">Create Account</h3>
+                <button class="close-modal text-text-secondary hover:text-accent">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <form class="space-y-4">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">First Name</label>
+                        <input type="text" class="w-full px-3 py-2 bg-space-blue-lighter border border-space-blue-lighter rounded-md focus:outline-none focus:border-accent" placeholder="John">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Last Name</label>
+                        <input type="text" class="w-full px-3 py-2 bg-space-blue-lighter border border-space-blue-lighter rounded-md focus:outline-none focus:border-accent" placeholder="Doe">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1">Email</label>
+                    <input type="email" class="w-full px-3 py-2 bg-space-blue-lighter border border-space-blue-lighter rounded-md focus:outline-none focus:border-accent" placeholder="your@email.com">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1">Password</label>
+                    <input type="password" class="w-full px-3 py-2 bg-space-blue-lighter border border-space-blue-lighter rounded-md focus:outline-none focus:border-accent" placeholder="********">
+                </div>
+                
+                <div>
+                    <label class="block text-sm font-medium mb-1">Confirm Password</label>
+                    <input type="password" class="w-full px-3 py-2 bg-space-blue-lighter border border-space-blue-lighter rounded-md focus:outline-none focus:border-accent" placeholder="********">
+                </div>
+                
+                <div class="flex items-center text-sm">
+                    <input type="checkbox" id="terms" class="mr-2">
+                    <label for="terms">I agree to the <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-accent">Terms of Service</a> and <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-accent">Privacy Policy</a></label>
+                </div>
+                
+                <button type="button" class="btn-secondary py-2 px-4 rounded w-full">Create Account</button>
+                
+                <div class="text-center text-sm">
+                    Already have an account? <a href="https://page.genspark.site/page/toolu_01FYmFdYxB3CHawugudFV4ca/stockafella_complete_platform.html#" class="text-accent" id="show-login">Log in</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Lesson Data (For dynamic loading) -->
+    <script>
+        // Category and lesson data
+        const categoryData = {
+            "trading-basics": {
+                title: "Trading Basics",
+                description: "Learn the fundamental concepts of stock trading and market mechanics.",
+                lessons: [
+                    {
+                        id: "tb-1",
+                        title: "Introduction to Stock Trading",
+                        description: "Learn what stocks are, how the market works, and the basic terminology you need to know.",
+                        duration: "12:34",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=intro-clean-7-154597.mp3",
+                        infographic: {
+                            src: "trading-basics-infographic-1",
+                            hotspots: [
+                                { x: 25, y: 30, title: "Stock Exchange", content: "A marketplace where securities, such as stocks and bonds, are bought and sold. Major exchanges include NYSE and NASDAQ." },
+                                { x: 75, y: 30, title: "Broker", content: "An intermediary who buys and sells stocks on your behalf. Modern brokers typically offer online platforms for trading." },
+                                { x: 50, y: 70, title: "Market Order", content: "An instruction to buy or sell a stock immediately at the current market price." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "tb-2",
+                        title: "Order Types and Execution",
+                        description: "Master the different types of orders and how they're executed in the market.",
+                        duration: "15:47",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2021/12/05/audio_b98b20a8e8.mp3?filename=calm-and-peaceful-ambient-music-for-videos-5683.mp3",
+                        infographic: {
+                            src: "trading-basics-infographic-2",
+                            hotspots: [
+                                { x: 20, y: 40, title: "Market Order", content: "Buy or sell at the current best available price." },
+                                { x: 80, y: 40, title: "Limit Order", content: "Buy or sell at a specified price or better." },
+                                { x: 20, y: 80, title: "Stop Order", content: "Becomes a market order when a specified price is reached." },
+                                { x: 80, y: 80, title: "Stop-Limit Order", content: "Combines features of stop and limit orders." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "tb-3",
+                        title: "Understanding Stock Charts",
+                        description: "Learn to read and interpret different types of stock charts and their patterns.",
+                        duration: "18:22",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_d8eb8f6122.mp3?filename=epic-dramatic-action-trailer-99525.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "tb-4",
+                        title: "Trading Psychology for Beginners",
+                        description: "Develop the right mindset for successful trading and avoid common emotional pitfalls.",
+                        duration: "20:15",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/11/30/audio_72e64fa2a8.mp3?filename=calm-modern-logo-163027.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "tb-5",
+                        title: "Risk Management Fundamentals",
+                        description: "Learn essential risk management techniques to protect your capital and maximize returns.",
+                        duration: "16:48",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_9b756882da.mp3?filename=inspiration-identity-logo-music-short-version-159995.mp3",
+                        previewDuration: "0:30"
+                    }
+                ]
+            },
+            "investing-fundamentals": {
+                title: "Investing Fundamentals",
+                description: "Master the essentials of long-term investing and portfolio building.",
+                lessons: [
+                    {
+                        id: "if-1",
+                        title: "Investment vs. Trading",
+                        description: "Understand the key differences between investing and trading approaches.",
+                        duration: "14:23",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=intro-clean-7-154597.mp3",
+                        infographic: {
+                            src: "investing-fundamentals-infographic-1",
+                            hotspots: [
+                                { x: 30, y: 30, title: "Time Horizon", content: "Investing typically has a longer time horizon (years to decades) compared to trading (days to months)." },
+                                { x: 70, y: 30, title: "Analysis Method", content: "Investors focus on fundamental analysis while traders often use technical analysis." },
+                                { x: 30, y: 70, title: "Risk Profile", content: "Different risk profiles between investing (moderate, long-term) and trading (higher, short-term)." },
+                                { x: 70, y: 70, title: "Income Source", content: "Investors seek capital appreciation and dividends while traders aim for price movement profits." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "if-2",
+                        title: "Building a Diversified Portfolio",
+                        description: "Learn how to create a balanced portfolio across different asset classes and sectors.",
+                        duration: "19:51",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2021/12/05/audio_b98b20a8e8.mp3?filename=calm-and-peaceful-ambient-music-for-videos-5683.mp3",
+                        infographic: {
+                            src: "investing-fundamentals-infographic-2",
+                            hotspots: [
+                                { x: 20, y: 20, title: "Stocks", content: "Equities representing ownership in companies." },
+                                { x: 80, y: 20, title: "Bonds", content: "Fixed-income instruments representing debt." },
+                                { x: 20, y: 80, title: "Real Estate", content: "Property investments, including REITs." },
+                                { x: 80, y: 80, title: "Alternative Investments", content: "Commodities, crypto, and other non-traditional assets." },
+                                { x: 50, y: 50, title: "Asset Allocation", content: "The mix of assets based on your goals and risk tolerance." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "if-3",
+                        title: "Fundamental Analysis",
+                        description: "Discover how to evaluate stocks based on company financials and economic factors.",
+                        duration: "22:37",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_d8eb8f6122.mp3?filename=epic-dramatic-action-trailer-99525.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "if-4",
+                        title: "Dividend Investing Strategies",
+                        description: "Learn how to build an income-generating portfolio through dividend stocks.",
+                        duration: "17:42",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/11/30/audio_72e64fa2a8.mp3?filename=calm-modern-logo-163027.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "if-5",
+                        title: "Retirement Planning with Stocks",
+                        description: "Develop strategies for long-term wealth building through retirement accounts.",
+                        duration: "21:05",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_9b756882da.mp3?filename=inspiration-identity-logo-music-short-version-159995.mp3",
+                        previewDuration: "0:30"
+                    }
+                ]
+            },
+            "options": {
+                title: "Options",
+                description: "Understand options contracts, strategies, and advanced trading techniques.",
+                lessons: [
+                    {
+                        id: "op-1",
+                        title: "Options Basics",
+                        description: "Learn what options are, how they work, and the fundamental terminology.",
+                        duration: "16:29",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=intro-clean-7-154597.mp3",
+                        infographic: {
+                            src: "options-infographic-1",
+                            hotspots: [
+                                { x: 30, y: 30, title: "Call Option", content: "A contract giving the buyer the right to buy the underlying asset at a specified price within a specific time period." },
+                                { x: 70, y: 30, title: "Put Option", content: "A contract giving the buyer the right to sell the underlying asset at a specified price within a specific time period." },
+                                { x: 30, y: 70, title: "Strike Price", content: "The price at which the option holder can buy or sell the underlying security." },
+                                { x: 70, y: 70, title: "Expiration Date", content: "The date when the option contract becomes void." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "op-2",
+                        title: "Call and Put Options Explained",
+                        description: "A deep dive into call and put options with practical examples.",
+                        duration: "20:13",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2021/12/05/audio_b98b20a8e8.mp3?filename=calm-and-peaceful-ambient-music-for-videos-5683.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "op-3",
+                        title: "Options Strategies for Income",
+                        description: "Learn strategies like covered calls and cash-secured puts for generating income.",
+                        duration: "23:45",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_d8eb8f6122.mp3?filename=epic-dramatic-action-trailer-99525.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "op-4",
+                        title: "Advanced Options Strategies",
+                        description: "Master complex strategies like spreads, straddles, and condors.",
+                        duration: "25:18",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/11/30/audio_72e64fa2a8.mp3?filename=calm-modern-logo-163027.mp3",
+                        previewDuration: "0:30"
+                    }
+                ]
+            },
+            "technical-analysis": {
+                title: "Technical Analysis",
+                description: "Learn to read charts, identify patterns, and use indicators effectively.",
+                lessons: [
+                    {
+                        id: "ta-1",
+                        title: "Introduction to Technical Analysis",
+                        description: "Learn the basics of technical analysis and why it works.",
+                        duration: "15:38",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=intro-clean-7-154597.mp3",
+                        infographic: {
+                            src: "technical-analysis-infographic-1",
+                            hotspots: [
+                                { x: 25, y: 25, title: "Price Action", content: "The movement of a security's price plotted over time." },
+                                { x: 75, y: 25, title: "Chart Patterns", content: "Recognizable patterns that form on charts that can signal future price movement." },
+                                { x: 25, y: 75, title: "Support & Resistance", content: "Price levels where a stock has historically had difficulty falling below (support) or rising above (resistance)." },
+                                { x: 75, y: 75, title: "Volume", content: "The number of shares traded during a given period, indicating the strength behind price movements." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "ta-2",
+                        title: "Candlestick Patterns",
+                        description: "Master the art of reading candlestick charts and recognizing key patterns.",
+                        duration: "18:42",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2021/12/05/audio_b98b20a8e8.mp3?filename=calm-and-peaceful-ambient-music-for-videos-5683.mp3",
+                        infographic: {
+                            src: "technical-analysis-infographic-2",
+                            hotspots: [
+                                { x: 20, y: 30, title: "Doji", content: "A candlestick pattern with a small body, signaling indecision in the market." },
+                                { x: 50, y: 30, title: "Hammer", content: "A bullish reversal pattern forming at the end of a downtrend." },
+                                { x: 80, y: 30, title: "Engulfing Pattern", content: "A two-candle pattern where the second candle completely engulfs the first." },
+                                { x: 20, y: 70, title: "Morning Star", content: "A bullish reversal pattern consisting of three candles." },
+                                { x: 50, y: 70, title: "Evening Star", content: "A bearish reversal pattern consisting of three candles." },
+                                { x: 80, y: 70, title: "Shooting Star", content: "A bearish reversal pattern with a long upper shadow." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "ta-3",
+                        title: "Trend Analysis & Moving Averages",
+                        description: "Learn to identify trends and use moving averages effectively.",
+                        duration: "21:15",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_d8eb8f6122.mp3?filename=epic-dramatic-action-trailer-99525.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "ta-4",
+                        title: "Momentum Indicators",
+                        description: "Master indicators like RSI, MACD, and Stochastic to identify overbought and oversold conditions.",
+                        duration: "23:57",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/11/30/audio_72e64fa2a8.mp3?filename=calm-modern-logo-163027.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "ta-5",
+                        title: "Volume Analysis",
+                        description: "Understand how trading volume confirms price movements and signals reversals.",
+                        duration: "19:34",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_9b756882da.mp3?filename=inspiration-identity-logo-music-short-version-159995.mp3",
+                        previewDuration: "0:30"
+                    }
+                ]
+            },
+            "advanced-strategies": {
+                title: "Advanced Strategies",
+                description: "Discover sophisticated trading and investing approaches used by professionals.",
+                lessons: [
+                    {
+                        id: "as-1",
+                        title: "Swing Trading Strategies",
+                        description: "Learn to capture short to medium-term gains in a stock over a period of days to weeks.",
+                        duration: "22:17",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=intro-clean-7-154597.mp3",
+                        infographic: {
+                            src: "advanced-strategies-infographic-1",
+                            hotspots: [
+                                { x: 25, y: 30, title: "Entry Criteria", content: "Technical setups and confirmation signals for entering a swing trade." },
+                                { x: 75, y: 30, title: "Position Sizing", content: "How to determine appropriate position size based on risk tolerance." },
+                                { x: 25, y: 70, title: "Stop Placement", content: "Strategic placement of stop-loss orders to manage risk." },
+                                { x: 75, y: 70, title: "Profit Targets", content: "Methods for setting realistic profit targets and exit strategies." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "as-2",
+                        title: "Sector Rotation Strategies",
+                        description: "Master the art of moving investments across different market sectors based on economic cycles.",
+                        duration: "24:05",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2021/12/05/audio_b98b20a8e8.mp3?filename=calm-and-peaceful-ambient-music-for-videos-5683.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "as-3",
+                        title: "Pairs Trading",
+                        description: "Learn this market-neutral strategy that matches a long position with a short position in related stocks.",
+                        duration: "20:33",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_d8eb8f6122.mp3?filename=epic-dramatic-action-trailer-99525.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "as-4",
+                        title: "Algorithmic Trading Basics",
+                        description: "Introduction to algorithm-based trading strategies and their implementation.",
+                        duration: "25:49",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/11/30/audio_72e64fa2a8.mp3?filename=calm-modern-logo-163027.mp3",
+                        previewDuration: "0:30"
+                    }
+                ]
+            },
+            "market-psychology": {
+                title: "Market Psychology",
+                description: "Master the psychological aspects of trading and emotional discipline.",
+                lessons: [
+                    {
+                        id: "mp-1",
+                        title: "Understanding Market Sentiment",
+                        description: "Learn how crowd psychology influences market movements and how to read sentiment indicators.",
+                        duration: "19:46",
+                        free: true,
+                        audioSrc: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_c8c8a73467.mp3?filename=intro-clean-7-154597.mp3",
+                        infographic: {
+                            src: "market-psychology-infographic-1",
+                            hotspots: [
+                                { x: 30, y: 25, title: "Fear & Greed", content: "How these two emotions drive market cycles and create opportunities." },
+                                { x: 70, y: 25, title: "Sentiment Indicators", content: "Tools like the VIX, put/call ratio, and surveys that measure market sentiment." },
+                                { x: 30, y: 75, title: "Contrarian Investing", content: "The strategy of going against prevailing market sentiment." },
+                                { x: 70, y: 75, title: "Market Cycles", content: "The psychological phases of market cycles from euphoria to despair." }
+                            ]
+                        }
+                    },
+                    {
+                        id: "mp-2",
+                        title: "Overcoming Trading Biases",
+                        description: "Identify and overcome common cognitive biases that affect trading decisions.",
+                        duration: "21:23",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2021/12/05/audio_b98b20a8e8.mp3?filename=calm-and-peaceful-ambient-music-for-videos-5683.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "mp-3",
+                        title: "Developing a Trading Mindset",
+                        description: "Build the psychological foundation needed for consistent trading success.",
+                        duration: "23:51",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/10/30/audio_d8eb8f6122.mp3?filename=epic-dramatic-action-trailer-99525.mp3",
+                        previewDuration: "0:30"
+                    },
+                    {
+                        id: "mp-4",
+                        title: "Managing Emotions in Volatile Markets",
+                        description: "Strategies for staying calm and making rational decisions during market turbulence.",
+                        duration: "20:37",
+                        free: false,
+                        audioPreviewSrc: "https://cdn.pixabay.com/download/audio/2022/11/30/audio_72e64fa2a8.mp3?filename=calm-modern-logo-163027.mp3",
+                        previewDuration: "0:30"
+                    }
+                ]
+            }
+        };
+
+        // DOM elements
+        const categoryCards = document.querySelectorAll('.category-card');
+        const categorySection = document.getElementById('categories');
+        const lessonContent = document.getElementById('lesson-content');
+        const backToCategoriesBtn = document.getElementById('back-to-categories');
+        const categoryTitle = document.getElementById('category-title').querySelector('h2');
+        const categoryDescription = document.getElementById('category-description');
+        const lessonsContainer = document.getElementById('lessons-container');
+        
+        // Modal elements
+        const loginModal = document.getElementById('login-modal');
+        const signupModal = document.getElementById('signup-modal');
+        const loginBtns = document.querySelectorAll('#login-btn, #mobile-login-btn');
+        const signupBtns = document.querySelectorAll('#signup-btn, #mobile-signup-btn');
+        const closeModalBtns = document.querySelectorAll('.close-modal');
+        const showLoginLink = document.getElementById('show-login');
+        const showSignupLink = document.getElementById('show-signup');
+        
+        // Mobile menu
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Event listeners
+        
+        // Category selection
+        categoryCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const categoryId = card.getAttribute('data-category');
+                showCategory(categoryId);
+            });
+        });
+        
+        // Back button
+        backToCategoriesBtn.addEventListener('click', () => {
+            categorySection.classList.remove('hidden');
+            lessonContent.classList.add('hidden');
+        });
+        
+        // Modal handlers
+        loginBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                loginModal.classList.add('active');
+            });
+        });
+        
+        signupBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                signupModal.classList.add('active');
+            });
+        });
+        
+        closeModalBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                loginModal.classList.remove('active');
+                signupModal.classList.remove('active');
+            });
+        });
+        
+        showLoginLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            signupModal.classList.remove('active');
+            loginModal.classList.add('active');
+        });
+        
+        showSignupLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginModal.classList.remove('active');
+            signupModal.classList.add('active');
+        });
+        
+        // Mobile menu toggle
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const icon = menuToggle.querySelector('i');
+            if (mobileMenu.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+        
+        // Outside click handlers for modals
+        window.addEventListener('click', (e) => {
+            if (e.target === loginModal) {
+                loginModal.classList.remove('active');
+            }
+            if (e.target === signupModal) {
+                signupModal.classList.remove('active');
+            }
+        });
+        
+        // Function to show category lessons
+        function showCategory(categoryId) {
+            const category = categoryData[categoryId];
+            if (!category) return;
+            
+            // Update category info
+            categoryTitle.textContent = category.title;
+            categoryDescription.textContent = category.description;
+            
+            // Clear previous lessons
+            lessonsContainer.innerHTML = '';
+            
+            // Add lessons
+            category.lessons.forEach(lesson => {
+                const lessonElement = createLessonElement(lesson);
+                lessonsContainer.appendChild(lessonElement);
+            });
+            
+            // Show lesson content section
+            categorySection.classList.add('hidden');
+            lessonContent.classList.remove('hidden');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Function to create lesson element
+        function createLessonElement(lesson) {
+            const lessonDiv = document.createElement('div');
+            lessonDiv.className = 'lesson-card rounded-lg shadow-lg overflow-hidden';
+            
+            // Free lesson
+            if (lesson.free) {
+                lessonDiv.innerHTML = `
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">${lesson.title}</h3>
+                            <span class="bg-accent text-space-blue text-xs font-bold px-2 py-1 rounded">FREE</span>
+                        </div>
+                        <p class="text-text-secondary mb-4">${lesson.description}</p>
+                        <div class="flex justify-between items-center text-sm mb-4">
+                            <span class="flex items-center">
+                                <i class="far fa-clock mr-1"></i> ${lesson.duration}
+                            </span>
+                        </div>
+                        <div class="custom-audio-player" data-audio="${lesson.audioSrc}">
+                            <div class="flex items-center mb-2">
+                                <button class="play-btn text-accent mr-3">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="progress-container flex-grow">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <div class="time ml-3 text-xs">0:00 / ${lesson.duration}</div>
+                            </div>
+                            <div class="flex items-center">
+                                <button class="volume-btn text-accent mr-2">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                                <input type="range" class="volume-slider flex-grow" min="0" max="100" value="100">
+                            </div>
+                        </div>
+                        ${lesson.infographic ? `
+                        <div class="mt-6">
+                            <h4 class="text-lg font-medium mb-3">Interactive Infographic</h4>
+                            <div class="infographic-container p-4 h-64 relative" data-infographic="${lesson.infographic.src}">
+                                <div class="text-center absolute inset-0 flex flex-col items-center justify-center">
+                                    <div class="text-3xl text-accent mb-2">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="text-lg font-medium mb-1">Interactive Content</div>
+                                    <div class="text-sm text-text-secondary">Hover over hotspots to learn more</div>
+                                </div>
+                                ${lesson.infographic.hotspots.map(hotspot => `
+                                    <div class="hotspot" style="left: ${hotspot.x}%; top: ${hotspot.y}%;" data-title="${hotspot.title}" data-content="${hotspot.content}"></div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        ` : ''}
+                    </div>
+                `;
+                
+                // Add event listeners for audio player
+                setTimeout(() => {
+                    const audioPlayer = lessonDiv.querySelector('.custom-audio-player');
+                    setupAudioPlayer(audioPlayer);
+                    
+                    // Setup infographic hotspots
+                    if (lesson.infographic) {
+                        const hotspots = lessonDiv.querySelectorAll('.hotspot');
+                        setupHotspots(hotspots);
+                    }
+                }, 0);
+            } 
+            // Premium lesson
+            else {
+                lessonDiv.innerHTML = `
+                    <div class="p-6 relative">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold">${lesson.title}</h3>
+                            <span class="bg-space-blue-lighter text-accent text-xs font-bold px-2 py-1 rounded border border-accent">PREMIUM</span>
+                        </div>
+                        <p class="text-text-secondary mb-4">${lesson.description}</p>
+                        <div class="flex justify-between items-center text-sm mb-4">
+                            <span class="flex items-center">
+                                <i class="far fa-clock mr-1"></i> ${lesson.duration}
+                            </span>
+                        </div>
+                        <div class="custom-audio-player" data-audio="${lesson.audioPreviewSrc}">
+                            <div class="flex items-center mb-2">
+                                <button class="play-btn text-accent mr-3">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                                <div class="progress-container flex-grow">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <div class="time ml-3 text-xs">0:00 / ${lesson.previewDuration}</div>
+                            </div>
+                            <div class="flex items-center">
+                                <button class="volume-btn text-accent mr-2">
+                                    <i class="fas fa-volume-up"></i>
+                                </button>
+                                <input type="range" class="volume-slider flex-grow" min="0" max="100" value="100">
+                            </div>
+                        </div>
+                        <div class="mt-6 text-center">
+                            <div class="text-sm text-text-secondary mb-2">This is a preview. Subscribe to access the full lesson.</div>
+                            <button class="btn-secondary py-2 px-4 rounded text-sm">Upgrade to Pro</button>
+                        </div>
+                        <div class="premium-overlay absolute inset-0 hidden">
+                            <div class="flex flex-col items-center justify-center h-full p-6">
+                                <div class="text-4xl text-accent mb-4">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                                <h3 class="text-xl font-bold mb-2">Premium Content</h3>
+                                <p class="text-text-secondary text-center mb-4">This lesson is only available with a premium subscription.</p>
+                                <button class="btn-secondary py-2 px-6 rounded">Upgrade Now</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add event listeners for audio player
+                setTimeout(() => {
+                    const audioPlayer = lessonDiv.querySelector('.custom-audio-player');
+                    setupAudioPlayer(audioPlayer);
+                }, 0);
+            }
+            
+            return lessonDiv;
+        }
+        
+        // Function to setup audio player
+        function setupAudioPlayer(audioPlayerElement) {
+            if (!audioPlayerElement) return;
+            
+            const audioSrc = audioPlayerElement.getAttribute('data-audio');
+            const playBtn = audioPlayerElement.querySelector('.play-btn');
+            const progressContainer = audioPlayerElement.querySelector('.progress-container');
+            const progressBar = audioPlayerElement.querySelector('.progress-bar');
+            const timeDisplay = audioPlayerElement.querySelector('.time');
+            const volumeBtn = audioPlayerElement.querySelector('.volume-btn');
+            const volumeSlider = audioPlayerElement.querySelector('.volume-slider');
+            
+            const audio = new Audio(audioSrc);
+            let isPlaying = false;
+            
+            // Play/Pause
+            playBtn.addEventListener('click', () => {
+                if (isPlaying) {
+                    audio.pause();
+                    playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                } else {
+                    // Pause all other audio players first
+                    document.querySelectorAll('.custom-audio-player').forEach(player => {
+                        if (player !== audioPlayerElement) {
+                            const playerBtn = player.querySelector('.play-btn');
+                            if (playerBtn.innerHTML.includes('fa-pause')) {
+                                playerBtn.click();
+                            }
+                        }
+                    });
+                    
+                    audio.play();
+                    playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }
+                isPlaying = !isPlaying;
+            });
+            
+            // Update progress
+            audio.addEventListener('timeupdate', () => {
+                const duration = audio.duration || 0;
+                if (duration > 0) {
+                    const progressPercent = (audio.currentTime / duration) * 100;
+                    progressBar.style.width = `${progressPercent}%`;
+                    
+                    // Update time display
+                    const currentMinutes = Math.floor(audio.currentTime / 60);
+                    const currentSeconds = Math.floor(audio.currentTime % 60);
+                    const durationMinutes = Math.floor(duration / 60);
+                    const durationSeconds = Math.floor(duration % 60);
+                    
+                    timeDisplay.textContent = `${currentMinutes}:${currentSeconds < 10 ? '0' : ''}${currentSeconds} / ${durationMinutes}:${durationSeconds < 10 ? '0' : ''}${durationSeconds}`;
+                }
+            });
+            
+            // Click on progress bar
+            progressContainer.addEventListener('click', (e) => {
+                const width = progressContainer.clientWidth;
+                const clickX = e.offsetX;
+                const duration = audio.duration;
+                
+                audio.currentTime = (clickX / width) * duration;
+            });
+            
+            // Volume control
+            volumeSlider.addEventListener('input', () => {
+                const volume = volumeSlider.value / 100;
+                audio.volume = volume;
+                
+                // Update volume icon
+                if (volume === 0) {
+                    volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                } else if (volume < 0.5) {
+                    volumeBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
+                } else {
+                    volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }
+            });
+            
+            // Volume button
+            volumeBtn.addEventListener('click', () => {
+                if (audio.volume > 0) {
+                    audio.volume = 0;
+                    volumeSlider.value = 0;
+                    volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
+                } else {
+                    audio.volume = 1;
+                    volumeSlider.value = 100;
+                    volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+                }
+            });
+            
+            // Reset when ended
+            audio.addEventListener('ended', () => {
+                progressBar.style.width = '0%';
+                playBtn.innerHTML = '<i class="fas fa-play"></i>';
+                isPlaying = false;
+                audio.currentTime = 0;
+            });
+        }
+        
+        // Function to setup infographic hotspots
+        function setupHotspots(hotspots) {
+            hotspots.forEach(hotspot => {
+                // Create tooltip
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.innerHTML = `
+                    <div class="font-medium mb-1">${hotspot.getAttribute('data-title')}</div>
+                    <div class="text-sm">${hotspot.getAttribute('data-content')}</div>
+                `;
+                
+                hotspot.parentNode.appendChild(tooltip);
+                
+                // Position tooltip
+                function positionTooltip() {
+                    const hotspotRect = hotspot.getBoundingClientRect();
+                    const containerRect = hotspot.parentNode.getBoundingClientRect();
+                    
+                    // Calculate position
+                    let left = hotspotRect.left - containerRect.left;
+                    let top = hotspotRect.top - containerRect.top + hotspotRect.height + 10;
+                    
+                    // Adjust if too far right
+                    if (left + tooltip.offsetWidth > containerRect.width) {
+                        left = containerRect.width - tooltip.offsetWidth - 10;
+                    }
+                    
+                    // Adjust if too low
+                    if (top + tooltip.offsetHeight > containerRect.height) {
+                        top = hotspotRect.top - containerRect.top - tooltip.offsetHeight - 10;
+                    }
+                    
+                    tooltip.style.left = `${left}px`;
+                    tooltip.style.top = `${top}px`;
+                }
+                
+                // Show/hide tooltip
+                hotspot.addEventListener('mouseenter', () => {
+                    positionTooltip();
+                    tooltip.style.opacity = '1';
+                    tooltip.style.transform = 'translateY(0)';
+                });
+                
+                hotspot.addEventListener('mouseleave', () => {
+                    tooltip.style.opacity = '0';
+                    tooltip.style.transform = 'translateY(10px)';
+                });
+                
+                // Touch device support
+                hotspot.addEventListener('click', () => {
+                    const isVisible = tooltip.style.opacity === '1';
+                    
+                    // Hide all tooltips first
+                    document.querySelectorAll('.tooltip').forEach(t => {
+                        t.style.opacity = '0';
+                        t.style.transform = 'translateY(10px)';
+                    });
+                    
+                    if (!isVisible) {
+                        positionTooltip();
+                        tooltip.style.opacity = '1';
+                        tooltip.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+        }
+    </script>
+
+</body></html>
